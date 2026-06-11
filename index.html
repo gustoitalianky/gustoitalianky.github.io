@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -15,7 +15,6 @@
             margin: 0;
             padding: 0;
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            /* Changed background to scale beautifully without leaving white gaps */
             background: radial-gradient(circle at center, #161616 0%, #090909 100%) no-repeat fixed;
             background-color: #090909;
             color: #ffffff;
@@ -29,7 +28,8 @@
         }
 
         .wrapper {
-            max-width: 500px;
+            width: 100%;
+            max-width: 450px;
             padding: 30px;
             display: flex;
             flex-direction: column;
@@ -38,9 +38,9 @@
 
         /* Smooth Floating Animation for the Logo */
         .logo {
-            max-width: 210px;
+            max-width: 190px;
             height: auto;
-            margin-bottom: 35px;
+            margin-bottom: 25px;
             border-radius: 50%;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             animation: floatAnimation 4s ease-in-out infinite;
@@ -61,43 +61,77 @@
             }
         }
 
-        /* Elegant Luxury Text */
-        p {
-            font-size: 1.15rem;
-            color: #dcdcdc;
-            margin-bottom: 35px;
-            letter-spacing: 2px;
+        h2 {
+            font-size: 1.6rem;
+            font-weight: bold;
             text-transform: uppercase;
-            font-weight: 300;
-            opacity: 0.9;
+            letter-spacing: 3px;
+            margin: 0 0 10px 0;
+            color: #ffffff;
         }
 
-        /* High-End Interactive Button with Soft Ambient Glow */
-        .btn {
-            display: inline-block;
-            background-color: #ffffff;
-            color: #000000;
-            text-decoration: none;
-            padding: 16px 45px;
+        p {
             font-size: 0.95rem;
+            color: #aaa;
+            margin: 0 0 35px 0;
+            letter-spacing: 1px;
+            font-weight: 400;
+        }
+
+        /* Flexbox Stack for the Dual Link Navigation Cluster */
+        .button-stack {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        /* Universal Luxury Button Base Style */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 16px 20px;
+            font-size: 0.9rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 2px;
             border-radius: 50px;
-            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            text-decoration: none;
+            box-sizing: border-box;
         }
 
-        .btn:hover {
+        /* Option 1: Premium High-Contrast Call to Action Button styling */
+        .btn-primary {
+            background-color: #ffffff;
+            color: #000000;
+            box-shadow: 0 4px 20px rgba(255, 255, 255, 0.08);
+        }
+
+        .btn-primary:hover {
             background-color: #f0f0f0;
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.25);
+            box-shadow: 0 6px 25px rgba(255, 255, 255, 0.2);
+            letter-spacing: 3px;
+        }
+
+        /* Option 2: Elegant Minimalist Secondary Border Accent layout style */
+        .btn-secondary {
+            background-color: transparent;
+            color: #ffffff;
+            border: 1.5px solid rgba(255, 255, 255, 0.35);
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.07);
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255, 255, 255, 0.05);
             letter-spacing: 3px;
         }
 
         .btn:active {
             transform: translateY(1px);
-            box-shadow: 0 3px 10px rgba(255, 255, 255, 0.15);
         }
     </style>
 </head>
@@ -105,8 +139,15 @@
 
     <div class="wrapper">
         <img src="logo.jpg" alt="Gusto Italian Logo" class="logo">
-        <p>Application Form • Click Below</p>
-        <a href="https://gustoitalianky.github.io/application/" class="btn">Apply Now</a>
+        
+        <h2>Gusto Italian</h2>
+        <p>Employment & New-Hire Portal</p>
+        
+        <div class="button-stack">
+            <a href="https://gustoitalianky.github.io/job-application/" class="btn btn-primary">Join Our Team</a>
+            
+            <a href="https://gustoitalianky.github.io/application/" class="btn btn-secondary">New-Hire Onboarding</a>
+        </div>
     </div>
 
 </body>
